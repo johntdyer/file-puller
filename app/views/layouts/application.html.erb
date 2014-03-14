@@ -5,7 +5,9 @@
     <title><%= content_for?(:title) ? yield(:title) : "File Puller" %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "File Puller" %>">
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => false %>
+    <script type="text/javascript" src="/assets/timePicker.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/timePicker.css">
     <%= csrf_meta_tags %>
   </head>
   <body>

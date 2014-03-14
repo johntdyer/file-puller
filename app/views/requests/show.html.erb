@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Query:</strong>
+  <%= @request.query %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @request.email %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @request.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @request.end_time %>
+</p>
+
+<p>
+  <strong>Results:</strong>
+  <% if @request.log.file %>
+  <%= @request.log %>
+  <% else %>
+   Pending
+  <% end %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>

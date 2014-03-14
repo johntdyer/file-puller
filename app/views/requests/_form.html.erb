@@ -1,0 +1,47 @@
+<%= simple_form_for @request, :html=> { class: 'form-inline', role: "form" } do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :query,
+    as: :string,
+    input_html: { id: "queryForm", value: "Query", class: "form-control"  },
+    wrapper_html: { class: "form-group"},
+    label_html: { class: 'sr-only' }
+  %>
+
+  <br/><br/>
+
+  <%= f.input :email,
+    input_html: { id: "emailForm",value: "user@domain.com", class: "form-control emailQueryForm"  },
+    wrapper_html: { class: "form-group emailQueryForm"},
+    label_html: { class: 'sr-only' }
+  %>
+
+  <br/><br/>
+
+  <%= f.input :start_time,
+    as: :string,
+    input_html:{ class: "datetime_picker form-control",value: "Start Time" },
+    wrapper_html: { class: "form-group"},
+    label_html: { class: 'sr-only' }
+  %>
+
+  <%= f.input :end_time,
+    as: :string,
+    input_html:{ class: "datetime_picker form-control",value: "End Time" },
+    label_html: { class: 'sr-only' },
+    wrapper_html: { class: "form-group"}
+  %>
+
+  <br/><br/>
+
+  <%= f.input :metadata,
+    as: :string,
+    input_html:{ class: "form-control",value: "metadata"},
+    label_html: { class: 'sr-only' },
+    wrapper_html: { class: "form-group"}
+  %>
+
+  <br/><br/>
+
+  <%= f.button :submit, class: "btn btn-warning"  %>
+<% end %>

@@ -1,0 +1,37 @@
+<h1>Listing requests</h1>
+
+<table class="table table-hover table-condensed">
+  <thead>
+    <tr>
+      <th>Query</th>
+      <th>Email</th>
+      <th>Start time</th>
+      <th>End time</th>
+      <th>Results</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.query %></td>
+        <td><%= request.email %></td>
+        <td><%= request.start_time %></td>
+        <td><%= request.end_time %></td>
+
+        <td><%= link_to 'Download', download_request_path(request), :class => "glyphicon glyphicon-download-alt"%></td>
+
+        <td>
+          <%= link_to 'Show', request,:class => "glyphicon glyphicon-search" %>
+          <%= link_to 'Edit', edit_request_path(request),:class => "glyphicon glyphicon-cog"  %>
+          <%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' },:class => "glyphicon glyphicon-remove"  %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Request', new_request_path, :class => "btn btn-default" %>
