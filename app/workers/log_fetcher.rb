@@ -68,22 +68,22 @@ class LogFetcher
 end
 
 
-require 'es-query'
-jid = "testing123"
-params = {
-  metadata: "testing",
-  start_time: "2014-03-14T00:00:00.000Z",
-  end_time: "2014-03-14T04:00:00.000Z",
-  query: 'tags:"sensu-status-warning"  AND NOT "ESHeap"'
-}
+# require 'es-query'
+# jid = "testing123"
+# params = {
+#   metadata: "testing",
+#   start_time: "2014-03-14T00:00:00.000Z",
+#   end_time: "2014-03-14T04:00:00.000Z",
+#   query: 'tags:"sensu-status-warning"  AND NOT "ESHeap"'
+# }
 
-file_name = "test.log"
+# file_name = "test.log"
 
-es_conn = Esquery.new( params[:query], params[:start_time], params[:end_time], "public/requests/#{file_name}", {})
+# es_conn = Esquery.new( params[:query], params[:start_time], params[:end_time], "public/requests/#{file_name}", {})
 
 
-until es_conn.query_finished do
-  print "."
-end
+# until es_conn.query_finished do
+#   print "."
+# end
 
-puts "done -> #{es_conn.num_results}"
+# puts "done -> #{es_conn.num_results}"
