@@ -1,13 +1,30 @@
 <h1>Listing requests</h1>
+<!-- Button trigger modal -->
 
-<table class="table table-hover table-condensed">
+
+
+
+
+  <script type="text/javascript" charset="utf-8">
+  $(document).ready(function() {
+    $('#example').dataTable({
+      "sPaginationType": "bootstrap",
+      "aaSorting": [[ 2, "desc" ]]
+    });
+  });
+  </script>
+
+
+
+
+<table id="example" class="datatable table table-hover table-condensed">
   <thead>
     <tr>
       <th>Query</th>
       <th>Email</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Results</th>
+      <th>Created Date</th>
+      <th>Window</th>
+      <th>Status</th>
       <th></th>
     </tr>
   </thead>
@@ -15,12 +32,14 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><%= request.query %></td>
+        <td>
+        <%= build_modal(request) %>
+        </td>
         <td><%= request.email %></td>
-        <td><%= request.start_time %></td>
-        <td><%= request.end_time %></td>
+        <td><%= request.created_at %></td>
+        <td><%= request.start_time %> - <%= request.end_time %></td>
 
-        <td><%= link_to 'Download', download_request_path(request), :class => "glyphicon glyphicon-download-alt"%></td>
+        <td> <%= build_download_url request %></td>
 
         <td>
           <%= link_to 'Show', request,:class => "glyphicon glyphicon-search" %>

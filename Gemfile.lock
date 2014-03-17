@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/rweng/jquery-datatables-rails.git
+  revision: 788a7b24caf8fe58a5493aa3f6a065879a9f752a
+  specs:
+    jquery-datatables-rails (1.12.2)
+      jquery-rails
+      sass-rails
+
+GIT
   remote: git://github.com/zpaulovics/datetimepicker-rails.git
   revision: f0316e55d6a46794e56d5e636ea838c9eaef34cb
   specs:
@@ -6,9 +14,9 @@ GIT
 
 GIT
   remote: git@bitbucket.org:voxeolabs/es-query.git
-  revision: 233938f6e96efb69f5f55b46512feedeebc5bf9c
+  revision: db3781b5221b09c1659d115486f348648db2a392
   specs:
-    es-query (0.0.5)
+    es-query (0.0.6)
       curb (>= 0.8.5)
       elasticsearch (>= 1.0.0)
       faraday (= 0.8.8)
@@ -312,6 +320,7 @@ DEPENDENCIES
   guard-rspec
   hub
   jbuilder (~> 1.2)
+  jquery-datatables-rails!
   jquery-rails
   jquery-ui-rails
   pony

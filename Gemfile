@@ -9,6 +9,8 @@ gem 'dotenv'
 gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 #gem 'paperclip'
 gem 'es-query', :git => 'git@bitbucket.org:voxeolabs/es-query.git'
+gem 'jquery-datatables-rails', git: 'git://github.com/rweng/jquery-datatables-rails.git'
+
 gem 'carrierwave'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
