@@ -14,11 +14,11 @@ GIT
 
 GIT
   remote: git@bitbucket.org:voxeolabs/es-query.git
-  revision: db3781b5221b09c1659d115486f348648db2a392
+  revision: ab51622f4f50b16f72376026a2576c37ea694b87
   specs:
-    es-query (0.0.6)
+    es-query (0.1.0)
       curb (>= 0.8.5)
-      elasticsearch (>= 1.0.0)
+      elasticsearch (>= 1.0.1)
       faraday (= 0.8.8)
       progress_bar
       typhoeus (= 0.6.6)
