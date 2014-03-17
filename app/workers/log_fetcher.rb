@@ -10,13 +10,9 @@ class LogFetcher
 
   def perform(params={})
     params.merge!('file_name' => params[:metadata].nil? ? "#{jid}.log" : "#{jid}-#{params[:metadata]}.log")
-    # Set some variables
-
-    logger.info "JID #{jid} - TID #{Thread.current.object_id.to_s(36)} - Querying #{params[:query]} and writing results to #{params['file_name']}"
-
+    logger.info "JID #{jid} - TID #{Thread.current.object_id.to_s(36)} - Querying #{params['query']} and writing results to #{params['file_name']}"
     results = nil
     begin
-      logger.info "params - #{params}"
       results = perform_query params
     rescue Exception => e
       logger.error "Error performing query -> #{e}"
@@ -34,7 +30,6 @@ class LogFetcher
     rescue Exception => e
       logger.error "Something bad happened -> #{e}"
     end
-
 
   end
 
@@ -76,7 +71,6 @@ class LogFetcher
     es_conn = Esquery.new(es_conf)
 
     loop do
-
       logger.debug "#{jid} - Query running"
       sleep 2
       break if es_conn.query_finished
