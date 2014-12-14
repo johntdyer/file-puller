@@ -25,7 +25,7 @@ class LogFetcher
       url = "http://#{ENV['DOMAIN']}/requests/#{request.id}/download"
 
       logger.info "JID #{jid} - TID #{Thread.current.object_id.to_s(36)} - Query finished, found #{results.num_results} results.  Result can be found here #{url}"
-      send_notification params['email'], "Log request #{jid} finished. - found #{results.num_results}} results.","Query finished, found #{results.num_results}} results.  Result can be found here #{url}"
+      send_notification params['email'], "Log request #{jid} finished. - found #{results.num_results} results.","Query finished, found #{results.num_results} results.  Result can be found here #{url}"
 
     rescue Exception => e
       logger.error "Something bad happened -> #{e}"
